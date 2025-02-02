@@ -1,0 +1,57 @@
+A játékról:
+
+A játékosok hangosan háromig számolnak vagy a játék nevét, a "kő – papír – olló"-t mondják, minden számolásnál meglendítve a felemelt és ökölbe szorított kezüket. A harmadik számolás közben vagy az utána következő ütemben a játékosok kezükkel felveszik a három alakzat egyikét és megmutatják az ellenfelüknek. Újabban használt az amorf (alaktalan) anyag is, ami egyfajta joker, ami mindent visz és bármikor felhasználható, de csak több menetes küzdelemben. Két amorf anyag kiüti egymást. A másik változat a csoportkör, amit 3-6 játékos játszhat, ennek során mindenki megszámolja, hány más játékoson aratott győzelmet az adott körben (mindenki egyszerre mutat). Győzelmeit egy-egy pontként jegyezzük, aki előbb szerez minimum 20 pontot (változó, de ennyi az ajánlott), az a nyertes. Ezt akár kombinálhatjuk az amorf anyaggal, így még izgalmasabb a játék.
+
+kő: a zárt ököl
+olló: a kinyújtott, szétnyitott mutató és középső ujj
+papír: a nyitott tenyér
+amorf anyag: ujjaival vibráló kéz, de szinte bármi lehet
+
+Az a cél, hogy olyat mutassunk, ami legyőzi a másikat:
+
+a kő kicsorbítja az ollót: a kő győz
+az olló elvágja a papírt: az olló győz
+a papír becsomagolja a követ: a papír győz
+Ha mindketten ugyanazt mutatják, a játék döntetlen, és újat játszanak.
+
+A mi esetünkben játszhatunk a gépellen illetve egymás ellen is két játékos módban.
+
+Gépelen Nyomjuk meg az 1-es gombot vagy ha barátunk ellen akarunk játszani akkor a 2-es gombot.
+
+A választhó opciók
+
+-Kő 'K'
+-Papir 'P'
+-Ollo 'O'
+
+Az eredményeket egy adatbázisba illetve egy txt file-ba is mentjük.
+
+Az adatbázis amelyet létrehozzunk az lehet az én álltalam elkészitett vagy saját is minden esetre az adatbázis nevének meg kell egyeznie a programba irtal.
+Amennyiben szeretnénk másik adatbázist akor módositsuk a programban szereplot.
+
+Az adatbázis elkészitéséhez ide megosztom az én kódom.
+
+
+Ezt a kódott MYSQL-ben hozzuk létre
+
+CREATE DATABASE jatekospontok;
+
+USE jatekospontok;
+
+CREATE TABLE jatek_eredmenyek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jatekos1_nev VARCHAR(50) NOT NULL,
+    jatekos1_valasztas VARCHAR(1) NOT NULL,
+    jatekos2_nev VARCHAR(50) NOT NULL,
+    jatekos2_valasztas VARCHAR(1) NOT NULL,
+    eredmeny VARCHAR(50) NOT NULL,
+    gep_pontok INT DEFAULT 0,
+    datum TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+FIGYELEM!!! A PROGRAMBAN A MYSQ ADATAINKNÁL TÜNTESSÜK ÉS JAVITSUK KI  A MEGFELELŐ FELHASZNÁLÓNKRA ÉS JELSZAVUNKRE!!!! 
+AMENNYIBEN EZT NEM TESSZUK MEG AKKOR AZ ADATBŰZIST A RENDSZER NEM FOGJA MEGTALÁLNI!!!!
+
+Jó játékot!!!
+
+Papp Lászlo NYE D51P4L
